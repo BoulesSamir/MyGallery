@@ -1,0 +1,119 @@
+<form [formGroup]="InsertBook" (ngSubmit)="Add()">
+   <div class="row">
+<img src="https://localhost:44304/Images/Book1.jpg" class="col-12" height="100px">
+   </div>
+    <div class="row my-2">
+    <div class="col-md">
+        <label for="">Author</label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['Author'].valid"
+            [class.is-invalid]="InsertBook.controls['Author'].invalid && InsertBook.controls['Author'].touched"
+            formControlName="Author">
+        <div [hidden]="InsertBook.controls['Author'].valid || InsertBook.controls['Author'].untouched"
+            class="alert alert-danger">
+            Author is required
+        </div>
+    </div>
+    <div class="col-md">
+        <label for="">Title </label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['Title'].valid"
+            [class.is-invalid]="InsertBook.controls['Title'].invalid && InsertBook.controls['Title'].touched"
+            formControlName="Title">
+        <div [hidden]="InsertBook.controls['Title'].valid || InsertBook.controls['Title'].untouched"
+            class="alert alert-danger">
+            Title  is required
+        </div>
+    </div>
+</div>
+<div class="row my-2">
+    <div class="col-md">
+        <label for="">PublicationYear</label>
+        <input type="number" class="form-control" [class.is-valid]="InsertBook.controls['PublicationYear'].valid"
+            [class.is-invalid]="InsertBook.controls['PublicationYear'].invalid && InsertBook.controls['PublicationYear'].touched"
+            formControlName="PublicationYear">
+        <div [hidden]="InsertBook.controls['PublicationYear'].valid || InsertBook.controls['PublicationYear'].untouched"
+            class="alert alert-danger">
+            PublicationYear is required
+        </div>
+    </div>
+    <div class="col-md">
+        <label for="">Category </label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['Category'].valid"
+            [class.is-invalid]="InsertBook.controls['Category'].invalid && InsertBook.controls['Category'].touched"
+            formControlName="Category">
+        <div [hidden]="InsertBook.controls['Category'].valid || InsertBook.controls['Category'].untouched"
+            class="alert alert-danger">
+            Category  is required
+        </div>
+    </div>
+</div>
+    <div class="form-group">
+        <label for="">PublicationCountry</label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['PublicationCountry'].valid"
+            [class.is-invalid]="InsertBook.controls['PublicationCountry'].invalid && InsertBook.controls['PublicationCountry'].touched"
+            formControlName="PublicationCountry">
+        <div [hidden]="InsertBook.controls['PublicationCountry'].valid || InsertBook.controls['PublicationCountry'].untouched"
+            class="alert alert-danger">
+            PublicationCountry is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Price </label>
+        <input type="number" class="form-control" [class.is-valid]="InsertBook.controls['Price'].valid"
+            [class.is-invalid]="InsertBook.controls['Price'].invalid && InsertBook.controls['Price'].touched"
+            formControlName="Price">
+        <div [hidden]="InsertBook.controls['Price'].valid || InsertBook.controls['Price'].untouched"
+            class="alert alert-danger">
+            Title  is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Currency</label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['Currency'].valid"
+            [class.is-invalid]="InsertBook.controls['Currency'].invalid && InsertBook.controls['Currency'].touched"
+            formControlName="Currency">
+        <div [hidden]="InsertBook.controls['Currency'].valid || InsertBook.controls['Currency'].untouched"
+            class="alert alert-danger">
+            Author is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">ISBN </label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['ISBN'].valid"
+            [class.is-invalid]="InsertBook.controls['ISBN'].invalid && InsertBook.controls['ISBN'].touched"
+            formControlName="ISBN">
+        <div [hidden]="InsertBook.controls['ISBN'].valid || InsertBook.controls['ISBN'].untouched"
+            class="alert alert-danger">
+            ISBN  is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Summary</label>
+        <input type="textArea" class="form-control" [class.is-valid]="InsertBook.controls['Summary'].valid"
+            [class.is-invalid]="InsertBook.controls['Summary'].invalid && InsertBook.controls['Summary'].touched"
+            formControlName="Summary">
+        <div [hidden]="InsertBook.controls['Summary'].valid || InsertBook.controls['Summary'].untouched"
+            class="alert alert-danger">
+            Summary is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Notes </label>
+        <input type="text" class="form-control" [class.is-valid]="InsertBook.controls['Notes'].valid"
+            [class.is-invalid]="InsertBook.controls['Notes'].invalid && InsertBook.controls['Notes'].touched"
+            formControlName="Notes">
+        <div [hidden]="InsertBook.controls['Notes'].valid || InsertBook.controls['Notes'].untouched"
+            class="alert alert-danger">
+            Notes  is required
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="wrapper">
+            <div class="file-upload">
+              <input type="file" #img (change)="uploadImage($event)"/>
+              <i class="fas fa-paperclip"></i>              
+            </div>
+            <input class="file-path validate"  type="text" #nameFile placeholder="Upload your file">
+          </div>
+    </div>
+    <button class="btn btn-info" [disabled]="!InsertBook.valid" type="submit">Login</button>
+</form>

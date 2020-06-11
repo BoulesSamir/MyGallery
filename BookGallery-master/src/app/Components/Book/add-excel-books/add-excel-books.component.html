@@ -1,0 +1,12 @@
+
+<div class="card">
+    <button (click)="add()">Add</button>
+    <div class="wrapper">
+      <div class="file-upload">
+        <input type="file" #fileInput (change)="readExcel($event)"/>
+        <i class="fas fa-paperclip"></i>
+        
+      </div>
+      <input class="file-path validate"  type="text" #nameFile placeholder="Upload your file">
+    </div>
+    </div> 
